@@ -21,7 +21,7 @@ Notes in class, test Singleton pattern in a game of Martians
 
 #Clone, Build and test
 
-    git clone git@github.com:UniAJC-IngeSoft-III/singleton-example.git
+    git clone git@github.com:UniAJC-IngeSoft-III/singleton-example.git 
     cd mvc-example
     mvn clean compile assembly:single
     java -jar target/patron-singleton-1.0-jar-with-dependencies.jar
