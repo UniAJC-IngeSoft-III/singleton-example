@@ -14,7 +14,7 @@ public final class Singleton {
     }
 
     public static Singleton getInstance(){
-        count.incrementAndGet();
+        singleton.count.incrementAndGet();
         return singleton;
     }
 
