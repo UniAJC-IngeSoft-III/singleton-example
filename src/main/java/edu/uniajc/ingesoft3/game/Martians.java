@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public final class Martians {
     private static final Martians martians = new Martians();
-    private static final AtomicInteger count = new AtomicInteger(10);
+    private final AtomicInteger count = new AtomicInteger(10);
 
     private Martians(){
     }
@@ -16,21 +16,21 @@ public final class Martians {
         return martians;
     }
 
-    public static void killMartian(){
+    synchronized public void killMartian(){
         if(count.get() > 0){
             count.decrementAndGet();
             System.out.println("Martian has killed");
         }
     }
 
-    public void createMartian(){
+    synchronized public void createMartian(){
         if(count.get() > 0){
             count.incrementAndGet();
             System.out.println("Martian has created");
         }
     }
 
-    public int countMartians(){
+    synchronized public int countMartians(){
         int aliveMartians = count.get();
         switch (aliveMartians){
             case 0:
