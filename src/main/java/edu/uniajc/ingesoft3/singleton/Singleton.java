@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public final class Singleton {
     private static final Singleton singleton = new Singleton();
-    private static final AtomicInteger count = new AtomicInteger(0);
+    private final AtomicInteger count = new AtomicInteger(0);
 
     private Singleton() {
         System.out.println("Hi, only one instance was created");
@@ -18,7 +18,7 @@ public final class Singleton {
         return singleton;
     }
 
-    public static void getCount(){
+    synchronized public void getCount(){
         System.out.println("this method was called " + count + " times");
     }
 }
